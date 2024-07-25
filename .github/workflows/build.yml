@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: grassh-windows
-          path: Release/
+          path: build\windows\x64\runner\Release
 
   linux:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: grassh-linux
-          path: Release/
+          path: build/linux/x64/release/bundle/
       
 
   macos:
@@ -59,4 +59,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: grassh-macos
-          path: Release/
+          path: build/macos/Build/Products/Release/
