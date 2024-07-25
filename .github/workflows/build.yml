@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
-      - run: winget install --id MikeFarah.yq
+      - run: curl.exe -o C:\Windows\System32\yq.exe -L https://github.com/mikefarah/yq/releases/latest/download/yq_windows_amd64.exe
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
