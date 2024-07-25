@@ -9,8 +9,7 @@ jobs:
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
-      - name: Install yq
-        uses: mikefarah/yq@master
+      - run: winget install --id MikeFarah.yq
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
