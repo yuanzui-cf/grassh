@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:grassh/src/component/menu.dart';
 import 'package:grassh/src/component/window_button.dart';
+import 'package:grassh/src/config/global_config.dart';
+import 'package:grassh/src/models/menu.dart';
 import 'package:window_manager/window_manager.dart';
 
 class Sidebar extends StatefulWidget {
@@ -10,13 +13,15 @@ class Sidebar extends StatefulWidget {
 }
 
 class _SidebarState extends State<Sidebar> {
+  final double _width = 250;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         DragToMoveArea(
-          child: Container(
-            width: 250,
+          child: SizedBox(
+            width: _width,
             height: 40,
             child: Stack(
               alignment: Alignment.centerLeft,
@@ -55,6 +60,35 @@ class _SidebarState extends State<Sidebar> {
                 ),
               ],
             ),
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        SizedBox(
+          width: _width - 30,
+          child: Text(
+            style: TextStyle(
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: GlobalConfig.theme.shade900,
+            ),
+            "GrassH",
+          ),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 15,
+            vertical: 0,
+          ),
+          child: Menu(
+            menus: [
+              MenuModel(title: "首页", defaultOn: true),
+              MenuModel(title: "测试"),
+            ],
           ),
         ),
       ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grassh/src/app.dart';
+import 'package:grassh/src/config/global_config.dart';
 import 'package:window_manager/window_manager.dart';
 
 Future<void> main() async {
@@ -29,6 +30,7 @@ class GrassH extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GlobalConfig.init(Colors.green);
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GrassH',
