@@ -1,7 +1,19 @@
 {
   "@@locale": "zh",
+  "title": "GrassH",
+  "@title": {
+    "description": "标题"
+  }
   "menu_home": "首页",
   "@menu_home": {
-    "description": "菜单首页图标"
+    "description": "菜单首页"
+  },
+  "menu_terminal": "终端",
+  "@menu_terminal": {
+    "description": "菜单终端"
+  },
+  "menu_settings": "设置",
+  "@menu_settings": {
+    "description": "菜单设置"
   }
 }

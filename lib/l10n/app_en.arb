@@ -1,4 +1,7 @@
 {
   "@@locale": "en",
-  "menu_home": "Hello World!"
+  "title": "GrassH",
+  "menu_home": "Home",
+  "menu_terminal": "Terminal",
+  "menu_settings": "Setting",
 }

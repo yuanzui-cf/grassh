@@ -74,7 +74,7 @@ class _SidebarState extends State<Sidebar> {
               fontWeight: FontWeight.bold,
               color: GlobalConfig.theme.shade900,
             ),
-            "GrassH",
+            AppLocalizations.of(context)!.title,
           ),
         ),
         const SizedBox(
@@ -91,8 +91,14 @@ class _SidebarState extends State<Sidebar> {
                 icon: Icons.home,
                 title: AppLocalizations.of(context)!.menu_home,
               ),
-              MenuModel(icon: Icons.terminal, title: "终端"),
-              MenuModel(icon: Icons.settings, title: "设置"),
+              MenuModel(
+                icon: Icons.terminal,
+                title: AppLocalizations.of(context)!.menu_terminal,
+              ),
+              MenuModel(
+                icon: Icons.settings,
+                title: AppLocalizations.of(context)!.menu_settings,
+              ),
             ],
           ),
         ),

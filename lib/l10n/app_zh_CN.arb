@@ -1,4 +1,7 @@
 {
   "@@locale": "zh_CN",
-  "menu_home": "首页"
+  "title": "GrassH",
+  "menu_home": "首页",
+  "menu_terminal": "终端",
+  "menu_settings": "设置",
 }
