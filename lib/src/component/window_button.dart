@@ -41,7 +41,7 @@ class _WindowButtonState extends State<WindowButton> {
           _isHover = true;
         });
       },
-      child: InkWell(
+      child: GestureDetector(
         onTap: widget.callback,
         child: Container(
           width: 10,
