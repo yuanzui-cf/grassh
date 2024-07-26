@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:grassh/src/component/menu.dart';
 import 'package:grassh/src/component/window_button.dart';
 import 'package:grassh/src/config/global_config.dart';
@@ -86,7 +87,10 @@ class _SidebarState extends State<Sidebar> {
           ),
           child: Menu(
             menus: [
-              MenuModel(icon: Icons.home, title: "首页"),
+              MenuModel(
+                icon: Icons.home,
+                title: AppLocalizations.of(context)!.menu_home,
+              ),
               MenuModel(icon: Icons.terminal, title: "终端"),
               MenuModel(icon: Icons.settings, title: "设置"),
             ],

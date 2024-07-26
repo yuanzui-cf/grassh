@@ -1,0 +1,7 @@
+{
+  "@@locale": "zh",
+  "menu_home": "首页",
+  "@menu_home": {
+    "description": "菜单首页图标"
+  }
+}

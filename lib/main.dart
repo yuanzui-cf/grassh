@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:grassh/src/app.dart';
 import 'package:grassh/src/config/global_config.dart';
 import 'package:window_manager/window_manager.dart';
@@ -31,10 +32,15 @@ class GrassH extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     GlobalConfig.init(Colors.green);
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GrassH',
-      home: App(),
+      home: const App(),
+      theme: ThemeData(
+        useMaterial3: true,
+      ),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }
