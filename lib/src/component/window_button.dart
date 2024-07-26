@@ -47,32 +47,32 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onExit: (e) {
-        setState(() {
-          _isHover = false;
-        });
+    return Listener(
+      onPointerDown: (e) {
+        if (e.buttons == kPrimaryButton) {
+          _isPressed = true;
+        }
       },
-      onEnter: (e) {
-        setState(() {
-          _isHover = true;
-        });
+      onPointerCancel: (e) {
+        _isPressed = false;
       },
-      child: Listener(
-        onPointerDown: (e) {
-          if (e.buttons == kPrimaryButton) {
-            _isPressed = true;
-          }
-        },
-        onPointerCancel: (e) {
+      onPointerUp: (e) {
+        if (_isPressed) {
+          widget.callback?.call();
           _isPressed = false;
+        }
+      },
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        onExit: (e) {
+          setState(() {
+            _isHover = false;
+          });
         },
-        onPointerUp: (e) {
-          if (_isPressed) {
-            widget.callback?.call();
-            _isPressed = false;
-          }
+        onEnter: (e) {
+          setState(() {
+            _isHover = true;
+          });
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 100),
