@@ -86,8 +86,9 @@ class _SidebarState extends State<Sidebar> {
           ),
           child: Menu(
             menus: [
-              MenuModel(title: "首页", defaultOn: true),
-              MenuModel(title: "测试"),
+              MenuModel(icon: Icons.home, title: "首页"),
+              MenuModel(icon: Icons.terminal, title: "终端"),
+              MenuModel(icon: Icons.settings, title: "设置"),
             ],
           ),
         ),
