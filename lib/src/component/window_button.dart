@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -20,6 +21,7 @@ class WindowButton extends StatefulWidget {
 class _WindowButtonState extends State<WindowButton> with WindowListener {
   bool _isHover = false;
   bool _isFocus = true;
+  bool _isPressed = false;
 
   @override
   void initState() {
@@ -58,11 +60,19 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
         });
       },
       child: Listener(
+        onPointerDown: (e) {
+          if (e.buttons == kPrimaryButton) {
+            _isPressed = true;
+          }
+        },
+        onPointerCancel: (e) {
+          _isPressed = false;
+        },
         onPointerUp: (e) {
-          widget.callback?.call();
-          // if (e.buttons == kPrimaryButton) {
-          //   widget.callback?.call();
-          // }
+          if (_isPressed) {
+            widget.callback?.call();
+            _isPressed = false;
+          }
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 100),
