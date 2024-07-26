@@ -89,18 +89,16 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
   }
 
   @override
-  void onWindowFocus() async {
-    final bool isFocused = await windowManager.isFocused();
-    setState(() {
-      _isFocus = isFocused;
-    });
-  }
-
-  @override
-  void onWindowBlur() async {
-    final bool isFocused = await windowManager.isFocused();
-    setState(() {
-      _isFocus = isFocused;
-    });
+  void onWindowEvent(String event) {
+    switch (event) {
+      case 'focus':
+      case 'blur':
+        () async {
+          final bool isFocused = await windowManager.isFocused();
+          setState(() {
+            _isFocus = isFocused;
+          });
+        }();
+    }
   }
 }
