@@ -42,9 +42,7 @@ class _SidebarState extends State<Sidebar> {
                     color: Colors.yellow.shade600,
                     hoverColor: Colors.yellow.shade800,
                     callback: () async {
-                      await windowManager.isMaximized()
-                          ? windowManager.unmaximize()
-                          : windowManager.maximize();
+                      windowManager.minimize();
                     },
                   ),
                 ),
@@ -54,7 +52,9 @@ class _SidebarState extends State<Sidebar> {
                     color: Colors.green,
                     hoverColor: Colors.green.shade700,
                     callback: () async {
-                      windowManager.minimize();
+                      await windowManager.isMaximized()
+                          ? windowManager.unmaximize()
+                          : windowManager.maximize();
                     },
                   ),
                 ),
