@@ -60,6 +60,9 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
       child: Listener(
         onPointerUp: (e) {
           widget.callback?.call();
+          // if (e.buttons == kPrimaryButton) {
+          //   widget.callback?.call();
+          // }
         },
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 100),
@@ -76,16 +79,18 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
   }
 
   @override
-  void onWindowFocus() {
+  void onWindowFocus() async {
+    final bool isFocused = await windowManager.isFocused();
     setState(() {
-      _isFocus = true;
+      _isFocus = isFocused;
     });
   }
 
   @override
-  void onWindowBlur() {
+  void onWindowBlur() async {
+    final bool isFocused = await windowManager.isFocused();
     setState(() {
-      _isFocus = false;
+      _isFocus = isFocused;
     });
   }
 }
