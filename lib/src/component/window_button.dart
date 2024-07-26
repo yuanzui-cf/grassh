@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:window_manager/window_manager.dart';
 
 class WindowButton extends StatefulWidget {
   final Color color;
@@ -16,11 +17,26 @@ class WindowButton extends StatefulWidget {
   State<WindowButton> createState() => _WindowButtonState();
 }
 
-class _WindowButtonState extends State<WindowButton> {
+class _WindowButtonState extends State<WindowButton> with WindowListener {
   bool _isHover = false;
-  // bool _isPress = false;
+  bool _isFocus = true;
+
+  @override
+  void initState() {
+    super.initState();
+    windowManager.addListener(this);
+  }
+
+  @override
+  void dispose() {
+    windowManager.removeListener(this);
+    super.dispose();
+  }
 
   Color getColor() {
+    if (!_isFocus) {
+      return Colors.grey;
+    }
     if (_isHover) {
       return widget.hoverColor;
     }
@@ -55,5 +71,19 @@ class _WindowButtonState extends State<WindowButton> {
         ),
       ),
     );
+  }
+
+  @override
+  void onWindowFocus() {
+    setState(() {
+      _isFocus = true;
+    });
+  }
+
+  @override
+  void onWindowBlur() {
+    setState(() {
+      _isFocus = false;
+    });
   }
 }
