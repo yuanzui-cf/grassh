@@ -41,8 +41,8 @@ class _WindowButtonState extends State<WindowButton> {
           _isHover = true;
         });
       },
-      child: GestureDetector(
-        onTapUp: (e) {
+      child: Listener(
+        onPointerUp: (e) {
           widget.callback?.call();
         },
         child: Container(
