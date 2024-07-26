@@ -61,7 +61,9 @@ class _WindowButtonState extends State<WindowButton> with WindowListener {
         onPointerUp: (e) {
           widget.callback?.call();
         },
-        child: Container(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 100),
+          curve: Curves.ease,
           width: 10,
           height: 10,
           decoration: BoxDecoration(
