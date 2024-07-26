@@ -42,9 +42,7 @@ class _WindowButtonState extends State<WindowButton> {
         });
       },
       child: GestureDetector(
-        onTapUp: (e) {
-          widget.callback();
-        },
+        onTap: widget.callback,
         child: Container(
           width: 10,
           height: 10,
