@@ -14,15 +14,13 @@ class Sidebar extends StatefulWidget {
 }
 
 class _SidebarState extends State<Sidebar> {
-  final double _width = 250;
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         DragToMoveArea(
           child: SizedBox(
-            width: _width,
+            width: 250,
             height: 40,
             child: Stack(
               alignment: Alignment.centerLeft,
@@ -67,7 +65,7 @@ class _SidebarState extends State<Sidebar> {
           height: 15,
         ),
         SizedBox(
-          width: _width - 30,
+          width: 220,
           child: Text(
             style: TextStyle(
               fontSize: 25,
@@ -78,7 +76,7 @@ class _SidebarState extends State<Sidebar> {
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 15,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(
@@ -100,6 +98,20 @@ class _SidebarState extends State<Sidebar> {
                 title: AppLocalizations.of(context)!.menu_settings,
               ),
             ],
+          ),
+        ),
+        const Expanded(
+          flex: 1,
+          child: SizedBox(),
+        ),
+        const SizedBox(
+          width: 220,
+          child: Text(
+            "v0.0.0-alpha",
+            style: TextStyle(
+              fontSize: 12,
+              color: Color(0xFFB6B6B6),
+            ),
           ),
         ),
       ],
