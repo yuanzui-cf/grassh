@@ -39,6 +39,9 @@ class GrassH extends StatelessWidget {
       title: 'GrassH',
       home: const App(),
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: GlobalConfig.theme,
+        ),
         useMaterial3: true,
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
