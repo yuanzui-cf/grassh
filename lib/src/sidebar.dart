@@ -117,11 +117,11 @@ class _SidebarState extends State<Sidebar> {
           flex: 1,
           child: SizedBox(),
         ),
-        const SizedBox(
+        SizedBox(
           width: 220,
           child: Text(
-            "v0.0.0-alpha",
-            style: TextStyle(
+            "v${GlobalConfig.packageInfo.version}${GlobalConfig.packageInfo.buildNumber != "" ? "-${GlobalConfig.packageInfo.buildNumber}" : ""}",
+            style: const TextStyle(
               fontSize: 12,
               color: Color(0xFFB6B6B6),
             ),

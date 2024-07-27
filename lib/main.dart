@@ -23,6 +23,9 @@ Future<void> main() async {
     await windowManager.focus();
   });
 
+  await GlobalConfig.init();
+  GlobalConfig.theme = Colors.green;
+
   runApp(const GrassH());
 }
 
@@ -31,7 +34,6 @@ class GrassH extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    GlobalConfig.init(Colors.green);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'GrassH',
