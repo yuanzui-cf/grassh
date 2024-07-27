@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grassh/src/component/automatic_keep_alive_wrapper.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -11,16 +12,26 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage>
     with TickerProviderStateMixin {
   late TabController _tabController;
-  List tabs = ["Global", "Backup", "About"];
+  late List tabs;
 
   @override
   void initState() {
     super.initState();
+    tabs = [
+      "global",
+      "sync",
+      "about",
+    ];
     _tabController = TabController(length: tabs.length, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
+    tabs = [
+      AppLocalizations.of(context)?.page_settings_tab_global,
+      AppLocalizations.of(context)?.page_settings_tab_sync,
+      AppLocalizations.of(context)?.page_settings_tab_about,
+    ];
     return Column(
       children: [
         Expanded(
@@ -29,7 +40,7 @@ class _SettingsPageState extends State<SettingsPage>
             width: MediaQuery.of(context).size.width,
             child: TabBar(
               controller: _tabController,
-              tabs: tabs.map((e) => Tab(text: e)).toList(),
+              tabs: tabs.map((e) => Tab(text: e)).toList(), 
             ),
           ),
         ),

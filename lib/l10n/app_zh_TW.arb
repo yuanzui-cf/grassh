@@ -3,5 +3,8 @@
   "title": "GrassH",
   "menu_home": "首頁",
   "menu_terminal": "終端",
-  "menu_settings": "設定"
+  "menu_settings": "設定",
+  "page_settings_tab_global": "一般",
+  "page_settings_tab_sync": "同步",
+  "page_settings_tab_about": "關於"
 }
