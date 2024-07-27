@@ -47,7 +47,9 @@ class _AppState extends State<App> {
         child: Row(children: <Widget>[
           Expanded(
             flex: 0,
-            child: Container(
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
               width: 250,
               color: GlobalConfig.theme.shade50.withOpacity(0.6),
               child: Sidebar(
@@ -57,7 +59,9 @@ class _AppState extends State<App> {
           ),
           Expanded(
             flex: 1,
-            child: Container(
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.easeInOut,
               color: Colors.white,
               child: MainPage(
                 child: Padding(
