@@ -43,15 +43,15 @@ class _SettingsPageState extends State<SettingsPage>
     };
     return Column(
       children: [
-        Expanded(
-          flex: 0,
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: TabBar(
-              controller: _tabController,
-              tabs: tabs.map((e) => Tab(text: tabsName[e])).toList(),
-            ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          child: TabBar(
+            controller: _tabController,
+            tabs: tabs.map((e) => Tab(text: tabsName[e])).toList(),
           ),
+        ),
+        const SizedBox(
+          height: 20,
         ),
         Expanded(
           flex: 1,
