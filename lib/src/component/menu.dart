@@ -74,6 +74,7 @@ class _MenuState extends State<Menu> {
                 setState(() {
                   currentIndex = index;
                 });
+                widget.menus[index].callback?.call();
               },
               borderRadius: BorderRadius.circular(5),
               child: AnimatedContainer(

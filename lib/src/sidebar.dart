@@ -7,7 +7,11 @@ import 'package:grassh/src/models/menu.dart';
 import 'package:window_manager/window_manager.dart';
 
 class Sidebar extends StatefulWidget {
-  const Sidebar({super.key});
+  final PageController? pageController;
+  const Sidebar({
+    super.key,
+    required this.pageController,
+  });
 
   @override
   State<Sidebar> createState() => _SidebarState();
@@ -88,14 +92,23 @@ class _SidebarState extends State<Sidebar> {
               MenuModel(
                 icon: Icons.home,
                 title: AppLocalizations.of(context)!.menu_home,
+                callback: () {
+                  widget.pageController?.jumpToPage(0);
+                },
               ),
               MenuModel(
                 icon: Icons.terminal,
                 title: AppLocalizations.of(context)!.menu_terminal,
+                callback: () {
+                  widget.pageController?.jumpToPage(1);
+                },
               ),
               MenuModel(
                 icon: Icons.settings,
                 title: AppLocalizations.of(context)!.menu_settings,
+                callback: () {
+                  widget.pageController?.jumpToPage(2);
+                },
               ),
             ],
           ),
