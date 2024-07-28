@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grassh/src/component/settings/options.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:grassh/src/config/global_config.dart';
 import 'package:grassh/src/config/language_config.dart';
 
 class GlobalSettings extends StatefulWidget {
@@ -24,7 +25,8 @@ class _GlobalSettingsState extends State<GlobalSettings> {
           options: langs,
           initialOption: Localizations.localeOf(context).toLanguageTag(),
           callback: (e) {
-            // TODO: 切换语言
+            GlobalConfig.config.conf["global"]["language"] = e;
+            GlobalConfig.config.save();
           },
         ),
       ],
