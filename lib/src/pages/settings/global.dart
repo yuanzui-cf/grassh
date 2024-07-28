@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:grassh/src/component/settings/options.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:grassh/src/config/global_config.dart';
 import 'package:grassh/src/config/language_config.dart';
+import 'package:grassh/src/models/language.dart';
+import 'package:provider/provider.dart';
 
 class GlobalSettings extends StatefulWidget {
   const GlobalSettings({super.key});
@@ -25,8 +26,8 @@ class _GlobalSettingsState extends State<GlobalSettings> {
           options: langs,
           initialOption: Localizations.localeOf(context).toLanguageTag(),
           callback: (e) {
-            GlobalConfig.config.conf["global"]["language"] = e;
-            GlobalConfig.config.save();
+            context.read<LanguageModel>().language =
+                (e != null && language.keys.contains(e)) ? e : "zh-CN";
           },
         ),
       ],

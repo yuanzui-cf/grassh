@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:grassh/src/app.dart';
 import 'package:grassh/src/config/global_config.dart';
+import 'package:grassh/src/models/language.dart';
+import 'package:provider/provider.dart';
 import 'package:window_manager/window_manager.dart';
 
 Future<void> main() async {
@@ -26,7 +28,14 @@ Future<void> main() async {
   await GlobalConfig.init();
   GlobalConfig.theme = Colors.green;
 
-  runApp(const GrassH());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => LanguageModel()),
+      ],
+      child: const GrassH(),
+    ),
+  );
 }
 
 class GrassH extends StatelessWidget {

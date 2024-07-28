@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:grassh/src/component/automatic_keep_alive_wrapper.dart';
 import 'package:grassh/src/config/global_config.dart';
+import 'package:grassh/src/config/language_config.dart';
+import 'package:grassh/src/models/language.dart';
 import 'package:grassh/src/page.dart';
 import 'package:grassh/src/pages/home.dart';
 import 'package:grassh/src/pages/settings.dart';
 import 'package:grassh/src/pages/terminal.dart';
 import 'package:grassh/src/sidebar.dart';
+import 'package:provider/provider.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -44,7 +47,7 @@ class _AppState extends State<App> {
     return Scaffold(
       body: Localizations.override(
         context: context,
-        locale: const Locale('zh', 'CN'),
+        locale: languageCode[context.watch<LanguageModel>().language],
         child: Row(children: <Widget>[
           Expanded(
             flex: 0,
