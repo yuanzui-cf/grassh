@@ -30,6 +30,7 @@ class _AppState extends State<App> {
 
     pageView = PageView(
       controller: pageController,
+      physics: const NeverScrollableScrollPhysics(),
       children: const [
         KeepAliveWrapper(child: HomePage()),
         KeepAliveWrapper(child: TerminalPage()),
