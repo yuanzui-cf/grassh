@@ -13,6 +13,7 @@ class _AboutSettingsState extends State<AboutSettings> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const SizedBox(
           width: 100,
@@ -23,17 +24,16 @@ class _AboutSettingsState extends State<AboutSettings> {
         ),
         Text(
           AppLocalizations.of(context)!.title,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
-            color: GlobalConfig.theme.withGreen(50).withBlue(10).withRed(10),
           ),
         ),
         Text(
-          "v${GlobalConfig.packageInfo.version}",
+          "v${GlobalConfig.packageInfo.version}${GlobalConfig.packageInfo.buildNumber != "" ? "-${GlobalConfig.packageInfo.buildNumber}" : ""}",
         ),
         const Text(
-          "Copyright (c) 2024 Grass Development Team.",
+          "Copyright © 2024 Grass Development Team.",
           style: TextStyle(
             fontSize: 12,
           ),
