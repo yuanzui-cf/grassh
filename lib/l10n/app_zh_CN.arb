@@ -6,5 +6,6 @@
   "menu_settings": "设置",
   "page_settings_tab_global": "通用",
   "page_settings_tab_sync": "同步",
-  "page_settings_tab_about": "关于"
+  "page_settings_tab_about": "关于",
+  "page_settings_global_language": "语言"
 }

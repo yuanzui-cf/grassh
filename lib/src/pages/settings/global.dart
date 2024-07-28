@@ -22,7 +22,7 @@ class _GlobalSettingsState extends State<GlobalSettings> {
     return ListView(
       children: [
         SettingsOption(
-          name: "语言",
+          name: AppLocalizations.of(context)!.page_settings_global_language,
           options: langs,
           initialOption: Localizations.localeOf(context).toLanguageTag(),
           callback: (e) {

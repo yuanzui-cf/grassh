@@ -27,5 +27,9 @@
   "page_settings_tab_about": "关于",
   "@page_settings_tab_about": {
     "description": "设置页面 Tab - 关于"
+  },
+  "page_settings_global_language": "语言",
+  "@page_settings_global_language": {
+    "description": "设置页面 - 通用 - 语言"
   }
 }
