@@ -7,7 +7,7 @@ class GlobalConfig {
   static late PackageInfo packageInfo;
   static late Config config;
 
-  static Future init() async {
+  static init() async {
     packageInfo = await PackageInfo.fromPlatform();
     config = Config(
       path: "./config.toml",
