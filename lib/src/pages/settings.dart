@@ -41,33 +41,38 @@ class _SettingsPageState extends State<SettingsPage>
       "sync": AppLocalizations.of(context)?.page_settings_tab_sync,
       "about": AppLocalizations.of(context)?.page_settings_tab_about,
     };
-    return Column(
-      children: [
-        SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: TabBar(
-            controller: _tabController,
-            tabs: tabs.map((e) => Tab(text: tabsName[e])).toList(),
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Expanded(
-          flex: 1,
-          child: SizedBox(
-            width: MediaQuery.of(context).size.width,
-            child: TabBarView(
-              controller: _tabController,
-              children: tabs.map((e) {
-                return KeepAliveWrapper(
-                  child: tabsPageWidgets[e],
-                );
-              }).toList(),
+    return Center(
+      child: Container(
+        constraints: const BoxConstraints(maxWidth: 1000),
+        child: Column(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: TabBar(
+                controller: _tabController,
+                tabs: tabs.map((e) => Tab(text: tabsName[e])).toList(),
+              ),
             ),
-          ),
+            const SizedBox(
+              height: 20,
+            ),
+            Expanded(
+              flex: 1,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: TabBarView(
+                  controller: _tabController,
+                  children: tabs.map((e) {
+                    return KeepAliveWrapper(
+                      child: tabsPageWidgets[e],
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
