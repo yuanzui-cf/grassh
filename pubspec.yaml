@@ -25,6 +25,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/images/gsh-logo.svg
+    - assets/images/gsh-logo-light.svg
+    - assets/images/Logo.webp
+    - assets/images/Logo-light.webp
   fonts:
     - family: Twemoji
       fonts:
