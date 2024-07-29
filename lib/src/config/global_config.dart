@@ -3,7 +3,7 @@ import 'package:grassh/src/config/config.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 class GlobalConfig {
-  static late MaterialColor theme;
+  static late ColorScheme theme;
   static late PackageInfo packageInfo;
   static late Config config;
 

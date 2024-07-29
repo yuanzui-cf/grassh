@@ -55,7 +55,7 @@ class _AppState extends State<App> {
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeInOut,
               width: 250,
-              color: GlobalConfig.theme.shade50.withOpacity(0.6),
+              color: GlobalConfig.theme.surfaceBright,
               child: Sidebar(
                 pageController: pageController,
               ),
@@ -66,7 +66,7 @@ class _AppState extends State<App> {
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeInOut,
-              color: Colors.white,
+              color: GlobalConfig.theme.surfaceContainerLowest,
               child: MainPage(
                 child: Padding(
                   padding: const EdgeInsets.only(

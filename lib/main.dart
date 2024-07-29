@@ -26,7 +26,10 @@ Future<void> main() async {
   });
 
   await GlobalConfig.init();
-  GlobalConfig.theme = Colors.green;
+  GlobalConfig.theme = ColorScheme.fromSeed(
+    seedColor: const Color(0xFF008A35),
+    brightness: Brightness.light,
+  );
 
   runApp(
     MultiProvider(
@@ -48,9 +51,7 @@ class GrassH extends StatelessWidget {
       title: 'GrassH',
       home: const App(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: GlobalConfig.theme,
-        ),
+        colorScheme: GlobalConfig.theme,
         useMaterial3: true,
         fontFamilyFallback: const [
           "Twemoji",
