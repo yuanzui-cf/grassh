@@ -3,7 +3,6 @@ import 'package:grassh/src/component/automatic_keep_alive_wrapper.dart';
 import 'package:grassh/src/config/global_config.dart';
 import 'package:grassh/src/config/language_config.dart';
 import 'package:grassh/src/models/language.dart';
-import 'package:grassh/src/page.dart';
 import 'package:grassh/src/pages/home.dart';
 import 'package:grassh/src/pages/settings.dart';
 import 'package:grassh/src/pages/terminal.dart';
@@ -63,20 +62,8 @@ class _AppState extends State<App> {
           ),
           Expanded(
             flex: 1,
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-              color: GlobalConfig.theme.surfaceContainerLowest,
-              child: MainPage(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 40,
-                    right: 40,
-                    bottom: 40,
-                  ),
-                  child: pageView,
-                ),
-              ),
+            child: SizedBox(
+              child: pageView,
             ),
           ),
         ]),

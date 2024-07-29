@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:grassh/src/config/global_config.dart';
+import 'package:grassh/src/page.dart';
 
 class TerminalPage extends StatefulWidget {
   const TerminalPage({super.key});
@@ -10,8 +12,14 @@ class TerminalPage extends StatefulWidget {
 class _TerminalPageState extends State<TerminalPage> {
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      child: Text("Terminal"),
+    return MainPage(
+      color: Colors.black87,
+      child: SizedBox(
+        child: Text(
+          "Terminal",
+          style: TextStyle(color: GlobalConfig.theme.onPrimary),
+        ),
+      ),
     );
   }
 }

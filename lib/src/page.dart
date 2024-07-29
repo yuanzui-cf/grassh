@@ -1,11 +1,13 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
 
 class MainPage extends StatefulWidget {
   final Widget child;
+  final Color color;
   const MainPage({
     super.key,
     required this.child,
+    required this.color,
   });
 
   @override
@@ -20,12 +22,23 @@ class _MainPageState extends State<MainPage> {
         DragToMoveArea(
           child: Container(
             height: 40,
+            color: widget.color,
           ),
         ),
         Expanded(
-          child: SizedBox(
+          child: Container(
             width: MediaQuery.of(context).size.width,
-            child: widget.child,
+            decoration: BoxDecoration(
+              color: widget.color,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 40,
+                right: 40,
+                bottom: 40,
+              ),
+              child: widget.child,
+            ),
           ),
         ),
       ],
