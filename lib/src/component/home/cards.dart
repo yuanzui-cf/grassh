@@ -53,14 +53,16 @@ class _InfoCardState extends State<InfoCard> {
                         Text(
                           widget.title,
                           style: const TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              overflow: TextOverflow.fade),
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            overflow: TextOverflow.fade,
+                          ),
                           softWrap: false,
                         ),
                         Text(
                           widget.summary,
                           style: TextStyle(
+                            fontSize: 12,
                             overflow: TextOverflow.fade,
                             color: GlobalConfig.theme.onSecondaryContainer,
                           ),
