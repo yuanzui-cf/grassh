@@ -54,7 +54,10 @@ class GrassH extends StatelessWidget {
         colorScheme: GlobalConfig.theme,
         useMaterial3: true,
         fontFamilyFallback: const [
-          "Twemoji",
+          'Twemoji',
+          'Microsoft YaHei',
+          '.AppleSystemUIFont',
+          'PingFang SC',
         ],
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
