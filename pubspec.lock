@@ -101,6 +101,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  grassh_core:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "01790ebc66939778e49557a6f6e691c9bf6a2d9d"
+      url: "https://github.com/Grass-Development-Team/grassh_core.git"
+    source: git
+    version: "0.0.1"
   http:
     dependency: transitive
     description:

@@ -19,6 +19,8 @@ dependencies:
   toml: ^0.16.0
   vector_graphics: ^1.1.11+1
   window_manager: ^0.3.9
+  grassh_core:
+    git: https://github.com/Grass-Development-Team/grassh_core.git
 
 dev_dependencies:
   flutter_test:
