@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grassh/src/config/global_config.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Bar extends StatelessWidget {
   const Bar({super.key});
@@ -11,20 +12,11 @@ class Bar extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: TextField(
+            child: Text(
+              AppLocalizations.of(context)!.menu_home,
               style: const TextStyle(
-                fontSize: 12,
-              ),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                contentPadding:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
-                isCollapsed: true,
-                hintText: "Search",
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
@@ -32,6 +24,7 @@ class Bar extends StatelessWidget {
             width: 5,
           ),
           InkWell(
+            onTap: () {},
             child: Container(
               width: 36,
               height: 36,
@@ -39,6 +32,7 @@ class Bar extends StatelessWidget {
                 color: GlobalConfig.theme.surfaceContainer,
                 borderRadius: BorderRadius.circular(5),
               ),
+              child: const Icon(Icons.add),
             ),
           ),
         ],
