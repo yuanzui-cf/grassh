@@ -25,7 +25,7 @@ class _InfoCardState extends State<InfoCard> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: widget.width,
-      height: 100,
+      height: 90,
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
@@ -49,11 +49,12 @@ class _InfoCardState extends State<InfoCard> {
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           widget.title,
                           style: const TextStyle(
-                            fontSize: 20,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                             overflow: TextOverflow.fade,
                           ),
@@ -64,7 +65,7 @@ class _InfoCardState extends State<InfoCard> {
                           style: TextStyle(
                             fontSize: 12,
                             overflow: TextOverflow.fade,
-                            color: GlobalConfig.theme.onSecondaryContainer,
+                            color: GlobalConfig.theme.surfaceContainerHighest,
                           ),
                           softWrap: false,
                         ),
