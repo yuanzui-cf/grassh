@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 import 'package:grassh/src/config/global_config.dart';
 
 class AboutSettings extends StatefulWidget {
@@ -18,8 +20,8 @@ class _AboutSettingsState extends State<AboutSettings> {
         const SizedBox(
           width: 100,
           height: 100,
-          child: Image(
-            image: AssetImage("assets/images/Logo.webp"),
+          child: SvgPicture(
+            AssetBytesLoader("assets/images/gsh-logo.vec"),
           ),
         ),
         Text(

@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grassh/src/config/global_config.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 class InfoCard extends StatefulWidget {
   final double? width;
   final String title;
   final String summary;
-  final Image image;
+  final SvgPicture image;
   final void Function()? callback;
   const InfoCard({
     super.key,
     required this.width,
     required this.title,
     required this.summary,
-    this.image = const Image(image: AssetImage("assets/images/Logo.webp")),
+    this.image = const SvgPicture(
+      AssetBytesLoader("assets/images/gsh-logo.vec"),
+    ),
     this.callback,
   });
 

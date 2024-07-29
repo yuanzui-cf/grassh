@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grassh/src/component/home/cards.dart';
 import 'package:grassh/src/models/info_cards.dart';
 
@@ -33,7 +34,7 @@ class _InfoCardListState extends State<InfoCardList> {
         width: _getWidth(),
         title: i.title,
         summary: i.summary,
-        image: i.image,
+        image: SvgPicture(i.image),
       ));
     }
     return list;
