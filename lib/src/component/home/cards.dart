@@ -6,12 +6,14 @@ class InfoCard extends StatefulWidget {
   final String title;
   final String summary;
   final Image image;
+  final void Function()? callback;
   const InfoCard({
     super.key,
     required this.width,
     required this.title,
     required this.summary,
     this.image = const Image(image: AssetImage("assets/images/Logo.webp")),
+    this.callback,
   });
 
   @override
@@ -27,6 +29,7 @@ class _InfoCardState extends State<InfoCard> {
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
+          onTap: widget.callback,
           child: Card(
             child: Padding(
               padding: const EdgeInsets.all(20),
