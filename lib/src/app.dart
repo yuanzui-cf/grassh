@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:grassh/src/component/automatic_keep_alive_wrapper.dart';
 import 'package:grassh/src/config/global_config.dart';
-import 'package:grassh/src/page.dart';
+import 'package:grassh/src/config/language_config.dart';
+import 'package:grassh/src/models/language.dart';
 import 'package:grassh/src/pages/home.dart';
 import 'package:grassh/src/pages/settings.dart';
 import 'package:grassh/src/pages/terminal.dart';
 import 'package:grassh/src/sidebar.dart';
+import 'package:provider/provider.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -30,6 +32,7 @@ class _AppState extends State<App> {
 
     pageView = PageView(
       controller: pageController,
+      physics: const NeverScrollableScrollPhysics(),
       children: const [
         KeepAliveWrapper(child: HomePage()),
         KeepAliveWrapper(child: TerminalPage()),
@@ -43,7 +46,7 @@ class _AppState extends State<App> {
     return Scaffold(
       body: Localizations.override(
         context: context,
-        locale: const Locale('zh', 'CN'),
+        locale: languageCode[context.watch<LanguageModel>().language],
         child: Row(children: <Widget>[
           Expanded(
             flex: 0,
@@ -51,7 +54,7 @@ class _AppState extends State<App> {
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeInOut,
               width: 250,
-              color: GlobalConfig.theme.shade50.withOpacity(0.6),
+              color: GlobalConfig.theme.surfaceBright,
               child: Sidebar(
                 pageController: pageController,
               ),
@@ -59,20 +62,8 @@ class _AppState extends State<App> {
           ),
           Expanded(
             flex: 1,
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInOut,
-              color: Colors.white,
-              child: MainPage(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 40,
-                    right: 40,
-                    bottom: 40,
-                  ),
-                  child: pageView,
-                ),
-              ),
+            child: SizedBox(
+              child: pageView,
             ),
           ),
         ]),

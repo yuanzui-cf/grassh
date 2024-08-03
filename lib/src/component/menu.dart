@@ -22,9 +22,9 @@ class _MenuState extends State<Menu> {
 
   Color getColor(MenuModel state, int index) {
     if (currentIndex == index || state.isHover) {
-      return GlobalConfig.theme.shade100.withOpacity(0.3);
+      return GlobalConfig.theme.surfaceContainer;
     }
-    return GlobalConfig.theme.shade50.withOpacity(0);
+    return GlobalConfig.theme.surfaceBright;
   }
 
   @override

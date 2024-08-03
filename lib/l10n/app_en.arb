@@ -3,5 +3,9 @@
   "title": "GrassH",
   "menu_home": "Home",
   "menu_terminal": "Terminal",
-  "menu_settings": "Setting"
+  "menu_settings": "Setting",
+  "page_settings_tab_global": "Global",
+  "page_settings_tab_sync": "Sync",
+  "page_settings_tab_about": "About",
+  "page_settings_global_language": "Language"
 }

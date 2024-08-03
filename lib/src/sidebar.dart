@@ -71,10 +71,9 @@ class _SidebarState extends State<Sidebar> {
         SizedBox(
           width: 220,
           child: Text(
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
-              color: GlobalConfig.theme.shade900,
             ),
             AppLocalizations.of(context)!.title,
           ),
